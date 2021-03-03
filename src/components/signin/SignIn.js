@@ -4,9 +4,54 @@ import Axios from 'axios';
 
 
 const SignIn = () => {
+	const initialState = {
+		email: '',
+		password: '',
+	};
+	const [formState, setFormState] = useState(initialState);
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		Axios({
+			url: '',
+			method: 'POST',
+			data: formState,
+		}).then((res) => {
+			
+		});
+		setFormState(initialState);
+	};
+	const handleChange = (event) => {
+		setFormState({ ...formState, [event.target.id]: event.target.value });
+	};
 	return (
 		<div>
-			Sign In
+			<div className='loginTitle'>Login Below:</div>
+			<form onSubmit={handleSubmit}>
+				<label htmlFor='email' className='emailLabel'>
+					Enter Email:{' '}
+				</label>
+				<input
+					id='email'
+					onChange={handleChange}
+					value={formState.email}
+					placeholder='Email'
+					className='emailInput'
+				/>{' '}
+				<br />
+				<label htmlFor='password' className='passwordLabel'>
+					Enter Password:{' '}
+				</label>
+				<input
+					id='password'
+					onChange={handleChange}
+					value={formState.password}
+					placeholder='Password'
+					className='passwordInput'
+				/>
+				<button type='submit' className='loginSubmit'>
+					Submit
+				</button>
+			</form>
 			<div>
 				Not Signed Up Yet? <Link to='/signup'>Register</Link>
 			</div>
