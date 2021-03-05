@@ -6,6 +6,8 @@ const Home = () => {
         <div>
             Home
             <nav>
+                <Link to='/signup'>Create Listing</Link>
+                <br></br>
                 <Link to='/signin'>Login</Link>
                 <br></br>
                 <Link to='/Map'>Find Listing</Link>
