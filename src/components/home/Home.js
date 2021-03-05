@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div>
-            Home
-            <nav>
-                <Link to='/signup'>Create Listing</Link>
-                <br></br>
-                <Link to='/signin'>Login</Link>
-                <br></br>
-                <Link to='/Map'>Find Listing</Link>
-            </nav>
+            <img src="" />
+            <br></br>
+            <Link to='/Map'>Find Listing</Link>
+            <br></br>
+            <img src="" />
+            <h2>Need help with your mortgage payment?</h2>
+            <Link to='/signup'>Create Listing</Link>
+
+
+
         </div>
     );
 };
