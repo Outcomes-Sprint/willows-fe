@@ -5,11 +5,10 @@ import './Navigation.css';
 const Navigation = () => {
 	return (
 		<div>
-			<div>Brand</div>
+			<div id='brand'><Link to='/home'>Willow</Link></div>
 			<nav>
-				<Link to='/home'>Home</Link>
 				<Link to='/signin'>Login</Link>
-				<Link to='/Map'>Map</Link>
+				<Link to='/Map'>Find Listing</Link>
 			</nav>
 		</div>
 	);
