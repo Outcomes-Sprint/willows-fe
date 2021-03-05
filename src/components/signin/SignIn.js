@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Axios from 'axios';
+import './SignIn.css';
 
 
 const SignIn = () => {
@@ -16,7 +17,7 @@ const SignIn = () => {
 			method: 'POST',
 			data: formState,
 		}).then((res) => {
-			
+
 		});
 		setFormState(initialState);
 	};
@@ -25,6 +26,7 @@ const SignIn = () => {
 	};
 	return (
 		<div>
+			<img id="green" src="Willow.png" />
 			<div className='loginTitle'>Login Below:</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email' className='emailLabel'>
