@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -28,7 +27,13 @@ class Map extends Component {
                             text="My Marker"
                         />
                     </GoogleMapReact>
+                    <h5>Each listing on the map has been verified by a professional assessor.</h5>
                 </div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <div>Slider Placeholder</div>
             </div>
         );
     }
