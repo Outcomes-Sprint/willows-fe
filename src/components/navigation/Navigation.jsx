@@ -4,7 +4,7 @@ import './Navigation.css';
 
 const Navigation = () => {
 	return (
-		<nav class='flexnav'>
+		<nav className='flexnav'>
 			<div><Link to='/home'>Willow</Link></div>
 			<br></br>
 			<Link to='/signin'>Login</Link>

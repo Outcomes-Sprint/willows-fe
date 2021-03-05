@@ -26,7 +26,7 @@ const SignIn = () => {
 	};
 	return (
 		<div>
-			<img id="green" src="Willow.png" />
+			<img className="green" src="Willow.png" />
 			<div className='loginTitle'>Login Below:</div>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email' className='emailLabel'>
