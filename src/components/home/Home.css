@@ -10,8 +10,7 @@
     
 }
 
-button{
+.home button{
     border-style: none;
-    background-color: rgb(85, 183, 139);
-    
+    background-color: rgb(85, 183, 139);   
 }

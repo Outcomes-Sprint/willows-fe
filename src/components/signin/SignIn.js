@@ -27,21 +27,22 @@ const SignIn = () => {
 	return (
 		<div>
 			<img className="green" src="Willow.png" />
-			<div className='loginTitle'>Login Below:</div>
+
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email' className='emailLabel'>
-					Enter Email:{' '}
+					{' '}
 				</label>
 				<input
 					id='email'
 					onChange={handleChange}
 					value={formState.email}
-					placeholder='Email'
+					placeholder='Email address'
 					className='emailInput'
 				/>{' '}
-				<br />
+				<br></br>
+				<br></br>
 				<label htmlFor='password' className='passwordLabel'>
-					Enter Password:{' '}
+					{' '}
 				</label>
 				<input
 					id='password'
@@ -50,12 +51,17 @@ const SignIn = () => {
 					placeholder='Password'
 					className='passwordInput'
 				/>
+				<br></br>
+				<br></br>
+				<br></br>
 				<button type='submit' className='loginSubmit'>
 					Submit
 				</button>
 			</form>
+			<br></br>
+			<br></br>
 			<div>
-				Not Signed Up Yet? <Link to='/signup'>Register</Link>
+				<Link to='/signup'>Sign Up</Link>
 			</div>
 		</div>
 	);

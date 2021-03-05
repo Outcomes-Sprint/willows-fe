@@ -5,7 +5,7 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div>
+        <div className="home">
             <img className="main" src="Helpaneighbor.png" />
             <h3>Help a Neighbor Save their Home</h3>
             <button><NavLink className="link" exact to='/Map'>Find Listings</NavLink></button>
