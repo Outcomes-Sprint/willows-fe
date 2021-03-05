@@ -15,7 +15,8 @@ class Map extends Component {
     render() {
         return (
             <div id="flexmap" >
-                <div style={{ height: '80vh', width: '90%' }}>
+                <br></br>
+                <div style={{ height: '80vh', width: '100%' }}>
                     <GoogleMapReact
                         // bootstrapURLKeys={{ key: NEED KEY HERE }}
                         defaultCenter={this.props.center}

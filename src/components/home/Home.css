@@ -6,9 +6,12 @@
 .link {
     text-decoration: none;
     color: white;
+    padding: 10px;
+    
 }
 
 button{
     border-style: none;
-    background-color: rgb(85, 183, 139)
+    background-color: rgb(85, 183, 139);
+    
 }
