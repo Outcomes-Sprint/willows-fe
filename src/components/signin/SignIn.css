@@ -1,0 +1,14 @@
+.green {
+    max-width: 100%;
+    height: 30vh;
+}
+
+form button {
+        border-style: none;
+        background-color: rgb(85, 183, 139);   
+    
+}
+
+form input {
+    border-color: rgb(85, 183, 139); 
+}

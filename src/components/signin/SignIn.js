@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Axios from 'axios';
+import './SignIn.css';
 
 
 const SignIn = () => {
@@ -16,7 +17,7 @@ const SignIn = () => {
 			method: 'POST',
 			data: formState,
 		}).then((res) => {
-			
+
 		});
 		setFormState(initialState);
 	};
@@ -25,21 +26,23 @@ const SignIn = () => {
 	};
 	return (
 		<div>
-			<div className='loginTitle'>Login Below:</div>
+			<img className="green" src="Willow.png" />
+
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email' className='emailLabel'>
-					Enter Email:{' '}
+					{' '}
 				</label>
 				<input
 					id='email'
 					onChange={handleChange}
 					value={formState.email}
-					placeholder='Email'
+					placeholder='Email address'
 					className='emailInput'
 				/>{' '}
-				<br />
+				<br></br>
+				<br></br>
 				<label htmlFor='password' className='passwordLabel'>
-					Enter Password:{' '}
+					{' '}
 				</label>
 				<input
 					id='password'
@@ -48,12 +51,17 @@ const SignIn = () => {
 					placeholder='Password'
 					className='passwordInput'
 				/>
+				<br></br>
+				<br></br>
+				<br></br>
 				<button type='submit' className='loginSubmit'>
 					Submit
 				</button>
 			</form>
+			<br></br>
+			<br></br>
 			<div>
-				Not Signed Up Yet? <Link to='/signup'>Register</Link>
+				<Link to='/signup'>Sign Up</Link>
 			</div>
 		</div>
 	);
