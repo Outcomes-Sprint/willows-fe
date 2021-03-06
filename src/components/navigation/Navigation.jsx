@@ -15,103 +15,103 @@ import { Link } from 'react-router-dom';
 import './Navigation.css';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-	textAlign: 'left',
-	fontFamily: "Poppins",
-	fontStyle: "normal",
-	fontWeight: "bold",
-	fontSize: "24.0263px",
-  },
-  navbar: {
-	background: "#52B788",
-  },
-  links: {
-	  textDecoration: "none",
-	  color: "#484848",
-	  width: "10rem",
-	  textAlign:"right",
-	  fontFamily: "Poppins",
-	  fontStyle: "normal",
-	  fontWeight: "bold",
-	  fontSize: "24.0263px",
-  },
-  links2: {
-	  textDecoration: "none",
-	  color: "#484848",
-	  width: "10rem",
-	  textAlign:"right",
-	  marginTop: "4rem",
-	  fontFamily: "Poppins",
-	  fontStyle: "normal",
-	  fontWeight: "bold",
-	  fontSize: "24.0263px",
-  },
+	root: {
+		flexGrow: 1,
+	},
+	menuButton: {
+		marginRight: theme.spacing(2),
+	},
+	title: {
+		flexGrow: 1,
+		textAlign: 'left',
+		fontFamily: "Poppins",
+		fontStyle: "normal",
+		fontWeight: "bold",
+		fontSize: "24.0263px",
+	},
+	navbar: {
+		background: "#52B788",
+	},
+	links: {
+		textDecoration: "none",
+		color: "#484848",
+		width: "10rem",
+		textAlign: "right",
+		fontFamily: "Poppins",
+		fontStyle: "normal",
+		fontWeight: "bold",
+		fontSize: "24.0263px",
+	},
+	links2: {
+		textDecoration: "none",
+		color: "#484848",
+		width: "10rem",
+		textAlign: "right",
+		marginTop: "4rem",
+		fontFamily: "Poppins",
+		fontStyle: "normal",
+		fontWeight: "bold",
+		fontSize: "24.0263px",
+	},
 }));
 
 export default function MenuAppBar() {
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+	const classes = useStyles();
+	const [anchorEl, setAnchorEl] = React.useState(null);
+	const open = Boolean(anchorEl);
 
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+	const handleMenu = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
 
-  const handleClose = () => {
-    setAnchorEl(null)
-  };
+	const handleClose = () => {
+		setAnchorEl(null)
+	};
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar className={classes.navbar}>
-          <Typography variant="h6" className={classes.title}>
-            Willow
-          </Typography>
-            <div>
-			  <IconButton aria-controls="menu-appbar"
-			              aria-haspopup="true"
-			              onClick={handleMenu} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-				<MenuIcon />
-	              <Menu
-	                id="menu-appbar"
-	                anchorEl={anchorEl}
-	                anchorOrigin={{
-	                  vertical: 'top',
-	                  horizontal: 'right',
-	                }}
-	                keepMounted
-	                transformOrigin={{
-	                  vertical: 'top',
-	                  horizontal: 'right',
-	                }}
-	                open={open}
-	                onClose={handleClose}
-	              >
-			      <MenuItem onClick={{handleClose}} ><Link className={classes.links} to='/home'>Willow</Link></MenuItem>
-			      <MenuItem onClick={{handleClose}}><Link className={classes.links} to='/home'>Profile</Link></MenuItem>
-				  <MenuItem onClick={{handleClose}}><Link className={classes.links} to='/map'>Listings</Link></MenuItem>
-				  <MenuItem onClick={{handleClose}}><Link className={classes.links} to='/home'>About</Link></MenuItem>
-				  <MenuItem onClick={{handleClose}}><Link className={classes.links} to='/home'>Support</Link></MenuItem>
-				  <MenuItem onClick={{handleClose}}><Link className={classes.links} to='/home'>FAQS</Link></MenuItem>
-				  <MenuItem onClick={{handleClose}}><Link className={classes.links2} to='/signin'>Sign In</Link></MenuItem>
-	              </Menu>
-			  </IconButton>
-            </div>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+	return (
+		<div className={classes.root}>
+			<AppBar position="static">
+				<Toolbar className={classes.navbar}>
+					<Typography variant="h6" className={classes.title}>
+						<Link className={classes.links} to='/home'>Willow</Link>
+					</Typography>
+					<div>
+						<IconButton aria-controls="menu-appbar"
+							aria-haspopup="true"
+							onClick={handleMenu} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+							<MenuIcon />
+							<Menu
+								id="menu-appbar"
+								anchorEl={anchorEl}
+								anchorOrigin={{
+									vertical: 'top',
+									horizontal: 'right',
+								}}
+								keepMounted
+								transformOrigin={{
+									vertical: 'top',
+									horizontal: 'right',
+								}}
+								open={open}
+								onClose={handleClose}
+							>
+								<MenuItem onClick={{ handleClose }} ><Link className={classes.links} to='/home'>Willow</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>Profile</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/map'>Listings</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>About</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>Support</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>FAQS</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }}><Link className={classes.links2} to='/signin'>Sign In</Link></MenuItem>
+							</Menu>
+						</IconButton>
+					</div>
+				</Toolbar>
+			</AppBar>
+		</div>
+	);
 }
 
 
-export default Navigation;
+
 
