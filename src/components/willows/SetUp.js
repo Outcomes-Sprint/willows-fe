@@ -12,12 +12,12 @@ const SetUp = () => {
                         id='address'
                         placeholder='Property Address'
                     />
-					<label htmlFor='title'>Who's the title owner</label>
+					<label htmlFor='title'>Who's the title owner?</label>
 					<input 
                         id='title'
                         placeholder='Title Owner'
                     />
-					<label>What's your email?</label>
+					<label htmlFor='titleEmail'>What's your email?</label>
 					<input 
                         id='titleEmail'
                         placeholder='Email Contact'

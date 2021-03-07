@@ -24,7 +24,7 @@ const Mortgage = () => {
                         />
                         <div><img src={mortgage} alt='mortgage info page image' /></div>
                         <div>Appreciate it! Next, We'll need: </div>
-                        <button>Financial Information</button>
+                        <button type='submit'>Financial Information</button>
 					</form>
 				</div>
 			</div>
