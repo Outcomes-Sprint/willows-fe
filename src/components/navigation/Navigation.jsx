@@ -96,7 +96,7 @@ export default function MenuAppBar() {
 								open={open}
 								onClose={handleClose}
 							>
-								<MenuItem onClick={{ handleClose }} ><Link className={classes.links} to='/home'>Willow</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }} ><Link className={classes.links} to='/willows'>Willow</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>Profile</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/map'>Listings</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>About</Link></MenuItem>
@@ -111,7 +111,3 @@ export default function MenuAppBar() {
 		</div>
 	);
 }
-
-
-
-
