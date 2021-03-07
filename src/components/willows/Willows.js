@@ -1,9 +1,10 @@
 import React from 'react';
+import SetUp from './SetUp'
 
 const Willows = () => {
     return (
         <div>
-            Willows
+            <SetUp />
         </div>
     );
 };
