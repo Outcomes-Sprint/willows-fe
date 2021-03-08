@@ -96,16 +96,17 @@ export default function MenuAppBar({ loggedIn, handleLogout, setLoggedIn }) {
 								onClose={handleClose}
 							>
 								<MenuItem onClick={{ handleClose }} ><Link className={classes.links} to='/willows'>Willow</Link></MenuItem>
-								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>Profile</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/profileedit'>Profile</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/map'>Listings</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>About</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>Support</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>FAQS</Link></MenuItem>
 
-								<MenuItem onClick={{ handleClose }}>{!loggedIn && <Link to='/signin'>Login</Link>}
-								{loggedIn && <button onClick={handleClose}>Logout</button>}</MenuItem>
 
-								<MenuItem onClick={{ handleClose }}><Link className={classes.links2} to='/signin'>Sign In</Link></MenuItem>
+
+								<MenuItem onClick={{ handleClose }}>{!loggedIn && <Link className={classes.links2} to='/signin'>Login</Link>}
+									{loggedIn && <button onClick={handleClose}>Logout</button>}</MenuItem>
+
 							</Menu>
 						</IconButton>
 					</div>
