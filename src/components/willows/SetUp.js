@@ -50,7 +50,7 @@ const SetUp = () => {
 						placeholder='Email Contact'
 					/>
 					<div>
-						<img src={Su} alt='Set up image' />
+						<img src={Su} alt='Set up' />
 					</div>
 					<div>Thanks! Next, We'll need:</div>
 					<button type='submit'>Mortgage Information</button>

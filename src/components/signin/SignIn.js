@@ -30,7 +30,7 @@ const SignIn = ({ loggedIn, setLoggedIn }) => {
 	}
 	return (
 		<div>
-			<img className='green' src='Willow.png' />
+			<img className='green' src='Willow.png' alt='willow'/>
 
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email' className='emailLabel'>

@@ -22,7 +22,7 @@ const MortgageDocs = () => {
 					<div {...getRootProps({ className: 'dropzone' })}>
 						<input {...getInputProps()} />
 						<p>Upload</p>
-						<img src={UploadsImg} />
+						<img src={UploadsImg} alt='uploads'/>
 					</div>
 				)}
 			</Dropzone>

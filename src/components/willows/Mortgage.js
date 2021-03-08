@@ -54,7 +54,7 @@ const Mortgage = () => {
 							placeholder='Number of payments'
 						/>
 						<div>
-							<img src={mortgage} alt='mortgage info page image' />
+							<img src={mortgage} alt='mortgage info' />
 						</div>
 						<div>Appreciate it! Next, We'll need: </div>
 						<button type='submit'>Financial Information</button>
