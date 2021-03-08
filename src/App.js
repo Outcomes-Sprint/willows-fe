@@ -7,6 +7,7 @@ import SignUp from './components/signup/SignUp';
 import SignIn from './components/signin/SignIn';
 import Map from './components/map/Map';
 import Willows from './components/willows/Willows';
+import ProfileEdit from './components/willows/profile/ProfileEdit';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(
@@ -39,6 +40,11 @@ function App() {
 					path='/willows'
 					exact
 					render={() => <Willows loggedIn={loggedIn} />}
+				/>
+				<Route
+					path='/profileedit'
+					exact
+					render={() => <ProfileEdit loggedIn={loggedIn} />}
 				/>
 			</main>
 		</div>
