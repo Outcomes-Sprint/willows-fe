@@ -1,12 +1,12 @@
 import { React, useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import './App.css';
-import Home from './components/home/Home'
-import Navigation from './components/navigation/Navigation.jsx'
-import SignUp from './components/signup/SignUp'
-import SignIn from './components/signin/SignIn'
-import Map from './components/map/Map'
-import Willows from './components/willows/Willows'
+import Home from './components/home/Home';
+import Navigation from './components/navigation/Navigation.jsx';
+import SignUp from './components/signup/SignUp';
+import SignIn from './components/signin/SignIn';
+import Map from './components/map/Map';
+import Willows from './components/willows/Willows';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(
