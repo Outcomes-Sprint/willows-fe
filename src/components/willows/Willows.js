@@ -1,7 +1,7 @@
 import React from 'react';
 import SetUp from './SetUp'
 import Mortgage from './Mortgage'
-import Payment from './Payment'
+// import Payment from './Payment'
 import ThankYou from './ThankYou'
 import MortgageDocs from './MortgageDocs';
 import Signup from '../signup/SignUp'
@@ -13,7 +13,7 @@ const Willows = ({ loggedIn }) => {
 			<Signup />
 			<SetUp />
 			<Mortgage />
-			<Payment />
+			{/* <Payment /> */}
 			<MortgageDocs />
 			<ThankYou />
 		</div>
