@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+// import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class Map extends Component {
     static defaultProps = {
@@ -15,20 +15,20 @@ class Map extends Component {
         return (
             <div id="flexmap" >
                 <br></br>
-                <div style={{ height: '80vh', width: '100%' }}>
+                {/* <div style={{ height: '80vh', width: '100%' }}>
                     <GoogleMapReact
                         // bootstrapURLKeys={{ key: NEED KEY HERE }}
                         defaultCenter={this.props.center}
                         defaultZoom={this.props.zoom}
                     >
                         <AnyReactComponent
-                            lat={97.743838}
-                            lng={30.265958}
+                            lng={97.743838}
+                            lat={30.265958}
                             text="My Marker"
                         />
                     </GoogleMapReact>
-                    <h5>Each listing on the map has been verified by a professional assessor.</h5>
-                </div>
+                </div> */}
+                <h5>Each listing has been verified by a professional assessor.</h5>
                 <br></br>
                 <br></br>
                 <br></br>
