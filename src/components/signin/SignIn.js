@@ -4,7 +4,7 @@ import Axios from 'axios';
 import './SignIn.css';
 
 
-const SignIn = () => {
+const SignIn = ({ loggedIn, setLoggedIn }) => {
 	const initialState = {
 		email: '',
 		password: '',
@@ -13,20 +13,24 @@ const SignIn = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		Axios({
-			url: '',
+			url: 'https://practice-makes-permanent.herokuapp.com/token/login/',
 			method: 'POST',
 			data: formState,
 		}).then((res) => {
-
+			localStorage.setItem('token', res.data.auth_token);
+			setLoggedIn(true);
 		});
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
+	if (loggedIn) {
+		return <Redirect to='/willows' />;
+	}
 	return (
 		<div>
-			<img className="green" src="Willow.png" />
+			<img className='green' src='Willow.png' />
 
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email' className='emailLabel'>

@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-export default function MenuAppBar() {
+export default function MenuAppBar({ loggedIn, handleLogout, setLoggedIn }) {
 	const classes = useStyles();
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
@@ -67,6 +67,8 @@ export default function MenuAppBar() {
 
 	const handleClose = () => {
 		setAnchorEl(null)
+		localStorage.clear();
+		setLoggedIn(false);
 	};
 
 	return (
@@ -102,6 +104,10 @@ export default function MenuAppBar() {
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>About</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>Support</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>FAQS</Link></MenuItem>
+
+								<MenuItem onClick={{ handleClose }}>{!loggedIn && <Link to='/signin'>Login</Link>}
+								{loggedIn && <button onClick={handleClose}>Logout</button>}</MenuItem>
+
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links2} to='/signin'>Sign In</Link></MenuItem>
 							</Menu>
 						</IconButton>

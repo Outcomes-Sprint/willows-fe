@@ -6,16 +6,16 @@ import ThankYou from './ThankYou'
 import MortgageDocs from './MortgageDocs';
 import './Willows.css'
 
-const Willows = () => {
-    return (
-        <div>
-            <SetUp />
-            <Mortgage />
-            <Payment />
-            <MortgageDocs />
-            <ThankYou />
-        </div>
-    );
+const Willows = ({ loggedIn }) => {
+	return (
+		<div /* style={{ display: loggedIn ? 'block' : 'none' }} */>
+			<SetUp />
+			<Mortgage />
+			<Payment />
+			<MortgageDocs />
+			<ThankYou />
+		</div>
+	);
 };
 
 export default Willows;

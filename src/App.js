@@ -9,9 +9,20 @@ import Map from './components/map/Map'
 import Willows from './components/willows/Willows'
 
 function App() {
+	const [loggedIn, setLoggedIn] = useState(
+		localStorage.getItem('token') ? true : false
+	);
+	const handleLogout = () => {
+		localStorage.clear();
+		setLoggedIn(false);
+	};
 	return (
 		<div className='App'>
-			<Navigation />
+			<Navigation
+				loggedIn={loggedIn}
+				setLoggedIn={setLoggedIn}
+				handleLogout={handleLogout}
+			/>
 			<main>
 				<Route path='/home' exact component={Home} />
 				<Route path='/' exact render={() => <Redirect to='/home' />} />
@@ -21,10 +32,14 @@ function App() {
 					path='/signin'
 					exact
 					render={() => {
-						return <SignIn />;
+						return <SignIn loggedIn={loggedIn} setLoggedIn={setLoggedIn} />;
 					}}
 				/>
-				<Route path='/willows' component={Willows}/>
+				<Route
+					path='/willows'
+					exact
+					render={() => <Willows loggedIn={loggedIn} />}
+				/>
 			</main>
 		</div>
 	);
