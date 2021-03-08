@@ -12,7 +12,7 @@ const MortgageDocs = () => {
 		Axios({
 			url: '',
 			method: 'POST',
-			data: acceptedFiles,
+			data: '',
 		});
 	};	
 	return (
