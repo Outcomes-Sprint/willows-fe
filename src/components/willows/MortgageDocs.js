@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import Axios from 'axios';
-import UploadsImg from './images/uploadsimg.png'
+import UploadsImg from './images/uploadsimg.png';
 
 const MortgageDocs = () => {
 	const [fileNames, setFileNames] = useState([]);
@@ -14,7 +14,7 @@ const MortgageDocs = () => {
 			method: 'POST',
 			data: '',
 		});
-	};	
+	};
 	return (
 		<div className='dropBoxContainer'>
 			<Dropzone onDrop={handleDrop}>
