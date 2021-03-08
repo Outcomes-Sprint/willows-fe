@@ -27,26 +27,31 @@ const SetUp = () => {
 		<div>
 			<div>Let's get you set up</div>
 			<div>
-				<form>
+				<form onSubmit={handleSubmit}>
 					<label htmlFor='address'>What's your property address?</label>
-					<input 
-                        id='address'
+					<input
+						id='address'
 						onChange={handleChange}
-                        placeholder='Property Address'
-                    />
+						value={formState.address}
+						placeholder='Property Address'
+					/>
 					<label htmlFor='title'>Who's the title owner?</label>
-					<input 
-                        id='title'
+					<input
+						id='title'
 						onChange={handleChange}
-                        placeholder='Title Owner'
-                    />
+						value={formState.title}
+						placeholder='Title Owner'
+					/>
 					<label htmlFor='titleEmail'>What's your email?</label>
-					<input 
-                        id='titleEmail'
+					<input
+						id='titleEmail'
 						onChange={handleChange}
-                        placeholder='Email Contact'
-                    />
-					<div><img src={Su} alt='Set up image' /></div>
+						value={formState.titleEmail}
+						placeholder='Email Contact'
+					/>
+					<div>
+						<img src={Su} alt='Set up image' />
+					</div>
 					<div>Thanks! Next, We'll need:</div>
 					<button type='submit'>Mortgage Information</button>
 				</form>
