@@ -7,17 +7,17 @@ function Property() {
     const [renderComponent, setRenderComponent] = useState(false)
 
     return (
-        <div>
-            <button onClick={() => setRenderComponent('Show')}>Show</button>
-            <button onClick={() => setRenderComponent('Post')}>Post</button>
+		<div>
+			<button onClick={() => setRenderComponent('Show')}>Show</button>
+			<button onClick={() => setRenderComponent('Post')}>Post</button>
 
-            { renderComponent === 'Show' ? (
-                <PropertyShow />
-            ) : (
-                <PropertyPost />
-            ) }
-        </div>
-    )
+			{renderComponent === 'Show' ? (
+				<PropertyShow setRenderComponent={setRenderComponent} />
+			) : (
+				<PropertyPost setRenderComponent={setRenderComponent} />
+			)}
+		</div>
+	);
 }
 
 export default Property

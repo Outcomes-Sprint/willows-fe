@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './PropertyPost.css';
+import Axios from 'axios'
+import { APIURL } from '../../config';
 
 
-function PropertyPost() {
+function PropertyPost({ setRenderComponent }) {
 	const [propertyForm, setPropertyForm] = useState({
 		address: '',
 		owner: '',
@@ -26,6 +28,18 @@ function PropertyPost() {
 		phase_6: 'Eviction',
 	};
 
+        const handleSubmit = (e) => {
+			e.preventDefault();
+			Axios({
+				method: 'post',
+				url: APIURL,
+				headers: {
+					// Authorization: `Token ${token}`,
+				},
+				data: propertyForm,
+			}).then(setRenderComponent('Show'));
+		};
+
 	const handleChange = (e) => {
 		e.preventDefault();
 		setPropertyForm({
@@ -37,7 +51,7 @@ function PropertyPost() {
 	return (
 		<div>
 			<h1>PropertyPost</h1>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor='monthlyPayment'>
 						What's your monthly mortgage payment?
@@ -51,6 +65,8 @@ function PropertyPost() {
 						onChange={handleChange}
 					/>
 				</div>
+
+                <button>Submit</button>
 			</form>
 		</div>
 	);
