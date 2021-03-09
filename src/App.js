@@ -10,7 +10,7 @@ import Willows from './components/willows/Willows';
 import ProfileEdit from './components/willows/profile/ProfileEdit';
 import Property from './pages/Property/Property';
 import Login from './pages/Login/Login';
-import { UserContext } from './utils/UserContext';
+// import { UserContext } from './utils/UserContext';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(
@@ -26,7 +26,7 @@ function App() {
 
 	return (
 		<div className='App'>
-			<UserContext.Provider vlaue={value}>
+			{/* <UserContext.Provider vlaue={value}> */}
 				<Navigation
 					loggedIn={loggedIn}
 					setLoggedIn={setLoggedIn}
@@ -41,8 +41,19 @@ function App() {
 						render={() => <Redirect to='/home' />}
 					/>
 					<Route path='/signup' component={SignUp} />
-					<Route path='/login' component={Login} />
 					<Route path='/map' component={Map} />
+					<Route
+						path='/login'
+						exact
+						render={() => {
+							return (
+								<Login
+									user={user}
+									setUser={setUser}
+								/>
+							);
+						}}
+					/>
 					<Route
 						path='/signin'
 						exact
@@ -66,7 +77,7 @@ function App() {
 						render={() => <ProfileEdit loggedIn={loggedIn} />}
 					/>
 				</main>
-			</UserContext.Provider>
+			{/* </UserContext.Provider> */}
 		</div>
 	);
 }
