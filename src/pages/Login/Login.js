@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
-// import { UserContext } from '../../utils/UserContext';
+import { UserContext } from '../../utils/UserContext';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { APIURL } from '../../utils/config';
 
-function Login({ user, setUser }) {
-    // const { user, setUser } = useContext(UserContext);
+function Login() {
+    const { user, setUser } = useContext(UserContext);
     const [newUser, setNewUser] = useState(false);
 	const [redirect, setRedirect] = useState(false);
 	const [error, setError] = useState('');
