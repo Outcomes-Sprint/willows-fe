@@ -62,7 +62,9 @@ function PropertyPost({ setRenderComponent }) {
 			{submitted ? (
 				<>
 					<div>Thank you!</div>
-					<div><img src={ThankYou} alt='Thank You' /></div>
+					<div>
+						<img src={ThankYou} alt='Thank You' />
+					</div>
 					<div>
 						We'll send you an email once your listing is approved.
 					</div>
@@ -73,106 +75,81 @@ function PropertyPost({ setRenderComponent }) {
 					<div>Tell us a bit about your mortgage</div>
 					<form onSubmit={handleSubmit}>
 						<div>
-							<label htmlFor='monthlyPayment'>
-								What's your monthly mortgage payment?
+							<label htmlFor='address'>
+								What is the address of the property?
 							</label>
 							<br />
 							<input
 								type='text'
 								name='address'
-								placeholder='Enter Address'
+								placeholder='123 Uh Oh Lane'
 								value={propertyForm.address}
 								onChange={handleChange}
 							/>
 						</div>
 						<div>
-							<label htmlFor='monthlyPayment'>
-								What's your monthly mortgage payment?
+							<label htmlFor='owner'>
+								What is the owner's name?
 							</label>
 							<br />
 							<input
 								type='text'
-								name='address'
-								placeholder='Enter Address'
-								value={propertyForm.address}
+								name='owner'
+								placeholder='John Appleseed'
+								value={propertyForm.owner}
 								onChange={handleChange}
 							/>
 						</div>
 						<div>
-							<label htmlFor='monthlyPayment'>
+							<label htmlFor='monthly_payment'>
 								What's your monthly mortgage payment?
 							</label>
 							<br />
 							<input
-								type='text'
-								name='address'
-								placeholder='Enter Address'
-								value={propertyForm.address}
+								type='number'
+								name='monthly_payment'
+								placeholder='$1200'
+								value={propertyForm.monthly_payment}
 								onChange={handleChange}
 							/>
 						</div>
 						<div>
-							<label htmlFor='monthlyPayment'>
-								What's your monthly mortgage payment?
+							<label htmlFor='amount_needed'>
+								What is the total amount that you need donated?
 							</label>
 							<br />
 							<input
-								type='text'
-								name='address'
-								placeholder='Enter Address'
-								value={propertyForm.address}
+								type='number'
+								name='amount_needed'
+								placeholder='$50,000'
+								value={propertyForm.amount_needed}
 								onChange={handleChange}
 							/>
 						</div>
 						<div>
-							<label htmlFor='monthlyPayment'>
-								What's your monthly mortgage payment?
+							<label htmlFor='missed_payments'>
+								How many payments have you missed?
 							</label>
 							<br />
 							<input
-								type='text'
-								name='address'
-								placeholder='Enter Address'
-								value={propertyForm.address}
+								type='number'
+								name='missed_payments'
+								placeholder='4'
+								value={propertyForm.missed_payments}
 								onChange={handleChange}
 							/>
 						</div>
 						<div>
-							<label htmlFor='monthlyPayment'>
-								What's your monthly mortgage payment?
+							<label htmlFor='story'>
+								What is the story behind your foreclosure
+								situation?
 							</label>
 							<br />
 							<input
 								type='text'
-								name='address'
-								placeholder='Enter Address'
-								value={propertyForm.address}
-								onChange={handleChange}
-							/>
-						</div>
-						<div>
-							<label htmlFor='monthlyPayment'>
-								What's your monthly mortgage payment?
-							</label>
-							<br />
-							<input
-								type='text'
-								name='address'
-								placeholder='Enter Address'
-								value={propertyForm.address}
-								onChange={handleChange}
-							/>
-						</div>
-						<div>
-							<label htmlFor='monthlyPayment'>
-								What's your monthly mortgage payment?
-							</label>
-							<br />
-							<input
-								type='text'
-								name='address'
-								placeholder='Enter Address'
-								value={propertyForm.address}
+								name='story'
+								placeholder='I messed up like real bad'
+								value={propertyForm.story}
 								onChange={handleChange}
 							/>
 						</div>
