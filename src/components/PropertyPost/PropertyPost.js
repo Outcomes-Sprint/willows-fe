@@ -135,7 +135,8 @@ function PropertyPost({ setRenderComponent, propertyData }) {
 						</div>
 						<div>
 							<label htmlFor='foreclosure_status'>
-								What stage of the foreclosure process are you in?
+								What stage of the foreclosure process are you
+								in?
 							</label>
 							<br />
 							<select
@@ -177,6 +178,11 @@ function PropertyPost({ setRenderComponent, propertyData }) {
 								value={propertyForm.story}
 								onChange={handleChange}
 							/>
+						</div>
+						<div>Upload Pre-forclosure Notice</div>
+						<div>
+							We can use this document to verify your listing, so
+							that you can get the help you need.
 						</div>
 
 						<button>Submit</button>

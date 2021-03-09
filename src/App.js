@@ -9,6 +9,7 @@ import Map from './components/map/Map';
 import Willows from './components/willows/Willows';
 import ProfileEdit from './components/willows/profile/ProfileEdit';
 import Property from './pages/Property/Property'
+import Login from './pages/Login/Login';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(
@@ -30,6 +31,7 @@ function App() {
 				<Route path='/property' exact component={Property} />
 				<Route path='/' exact render={() => <Redirect to='/home' />} />
 				<Route path='/signup' component={SignUp} />
+				<Route path='/login' component={Login} />
 				<Route path='/map' component={Map} />
 				<Route
 					path='/signin'

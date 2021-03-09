@@ -8,7 +8,7 @@ function PropertyShow({ setRenderComponent }) {
 		{
 			address: '123 Uh Oh Lane',
 			owner: 'John Appleseed',
-			story: 'I don\'t want to talk about it right now',
+			story: "I don't want to talk about it right now",
 			amount_needed: 2400,
 			monthly_payment: 1200,
 			missed_payments: 2,
@@ -37,22 +37,25 @@ function PropertyShow({ setRenderComponent }) {
 				{' '}
 				Edit Property
 			</button>
-            <div>
-                {propertyData.map( property => {
-                    return (
-                        <div>
-                            <p>Address: {property.address}</p>
-                            <p>Owner: {property.owner}</p>
-                            <p>Story: {property.story}</p>
-                            <p>Amount Needed: {property.amount_needed}</p>
-                            <p>Missed Payments: {property.missed_payments}</p>
-                            <p>Approved: {property.approved ? 'Yes' : 'No'}</p>
-                            <p>Foreclosure Status: {property.foreclosure_status}</p>
-                            <p>Documentation: {property.documentation}</p>
-                        </div>
-                    )
-                })}
-            </div>
+			<div>
+				{propertyData.map((property) => {
+					return (
+						<div>
+							<p>Address: {property.address}</p>
+							<p>Owner: {property.owner}</p>
+							<p>Story: {property.story}</p>
+							<p>Amount Needed: {property.amount_needed}</p>
+							<p>Missed Payments: {property.missed_payments}</p>
+							<p>Approved: {property.approved ? 'Yes' : 'No'}</p>
+							<p>
+								Foreclosure Status:{' '}
+								{property.foreclosure_status}
+							</p>
+							<p>Documentation: {property.documentation}</p>
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 }
