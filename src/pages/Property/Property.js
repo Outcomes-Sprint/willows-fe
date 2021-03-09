@@ -4,7 +4,7 @@ import PropertyShow from '../../components/PropertyShow/PropertyShow';
 import './Property.css';
 
 function Property() {
-    const [renderComponent, setRenderComponent] = useState(false)
+    const [renderComponent, setRenderComponent] = useState('Show')
 
     return (
 		<div>

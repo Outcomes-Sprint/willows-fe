@@ -4,7 +4,7 @@ import Axios from 'axios';
 import { APIURL } from '../../config';
 import ThankYou from '../../media/images/ty.png';
 
-function PropertyPost({ setRenderComponent }) {
+function PropertyPost({ setRenderComponent, propertyData }) {
 	const [submitted, setSubmitted] = useState(false);
 
 	const [propertyForm, setPropertyForm] = useState({
@@ -18,7 +18,7 @@ function PropertyPost({ setRenderComponent }) {
 		monthly_payment: '',
 		missed_payments: '',
 		approved: 'False',
-        // will automatically be false upon submission (not sure how False looks yet in django)
+        // we probably won't need to include this because the default will be false
 		documentation: '',
         // need to look at how Ash did it
 		foreclosure_status: '',
