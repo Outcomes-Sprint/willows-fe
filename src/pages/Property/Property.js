@@ -16,6 +16,7 @@ function Property() {
 			) : (
 				<PropertyPost setRenderComponent={setRenderComponent} />
 			)}
+
 		</div>
 	);
 }
