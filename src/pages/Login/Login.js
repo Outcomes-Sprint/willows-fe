@@ -1,36 +1,38 @@
 import React, { useState } from 'react';
+import { UserContext } from '../../utils/UserContext';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { APIURL } from '../../utils/config';
 
-// props needed are setUser and maybe setToken
 function Login() {
+    const { user, setUser } = useContext(UserContext);
+    const [newUser, setNewUser] = useState(false);
 	const [redirect, setRedirect] = useState(false);
 	const [error, setError] = useState('');
 	const [credentials, setCredentials] = useState({
 		name: '',
 		email: '',
 		password: '',
-		re_password: '',
+		re_password: ''
 	});
-	const [newUser, setNewUser] = useState(false);
-	const signUpURL = `${APIURL}/users/`;
-	const signInURL = `${APIURL}/token/login`;
-
+    
 	const handleChange = (e) => {
-		e.preventDefault();
+        e.preventDefault();
 		setCredentials({
-			...credentials,
+            ...credentials,
 			[e.target.name]: e.target.value,
 		});
 	};
-
+    
 	const handleClick = () => {
-		setNewUser(!newUser);
+        setNewUser(!newUser);
 		setError('');
 	};
-
+    
 	const handleSubmit = (event) => {
+        const signUpURL = `${APIURL}/users/`;
+        const signInURL = `${APIURL}/token/login`;
+
 		if (!newUser) {
 			event.preventDefault();
 			Axios({
@@ -40,9 +42,11 @@ function Login() {
 			})
 				.then((res) => {
 					if (res.data.auth_token) {
-						// setToken(res.data.auth_token);
-						// setUser(credentials.email);
-						// setRedirect(true);
+						setUser({
+							email: credentials.email,
+							token: res.data.auth_token,
+						});
+						setRedirect(true);
 					} else {
 						setError(res.data);
 						throw new Error('There was an error signing in');
@@ -57,8 +61,8 @@ function Login() {
 				url: signUpURL,
 				data: credentials,
 			})
-				.then((res) => {
-					// setUser('');
+				.then(() => {
+					setUser('');
 					setNewUser(false);
 				})
 				.catch(setError('There was an error signing up'));
