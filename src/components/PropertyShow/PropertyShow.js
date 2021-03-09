@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PropertyShow.css';
 import Axios from 'axios';
-import { APIURL } from '../../config';
+import { APIURL } from '../../utils/config';
 
 function PropertyShow({ setRenderComponent }) {
 	const [propertyData, setPropertyData] = useState([

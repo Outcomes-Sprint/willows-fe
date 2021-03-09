@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PropertyPost.css';
 import Axios from 'axios';
-import { APIURL } from '../../config';
+import { APIURL } from '../../utils/config';
 import ThankYou from '../../media/images/ty.png';
 
 function PropertyPost({ setRenderComponent, propertyData }) {
