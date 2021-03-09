@@ -95,7 +95,7 @@ export default function MenuAppBar({ loggedIn, handleLogout, setLoggedIn }) {
 								open={open}
 								onClose={handleClose}
 							>
-								<MenuItem onClick={{ handleClose }} ><Link className={classes.links} to='/willows'>Willow</Link></MenuItem>
+								<MenuItem onClick={{ handleClose }} ><Link className={classes.links} to=''>Willow</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/profileedit'>Profile</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/map'>Listings</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/home'>About</Link></MenuItem>
@@ -104,7 +104,7 @@ export default function MenuAppBar({ loggedIn, handleLogout, setLoggedIn }) {
 
 
 
-								<MenuItem onClick={{ handleClose }}>{!loggedIn && <Link className={classes.links2} to='/signin'>Login</Link>}
+								<MenuItem onClick={{ handleClose }}>{!loggedIn && <Link className={classes.links2} to='/login'>Login</Link>}
 									{loggedIn && <button onClick={handleClose}>Logout</button>}</MenuItem>
 
 							</Menu>

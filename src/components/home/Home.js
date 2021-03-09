@@ -13,7 +13,7 @@ const Home = () => {
             <br></br>
             <img className="main" src="Needhelp.png" alt='needHelp' />
             <h3>Need help with your mortgage payment?</h3>
-            <button><NavLink className="link" exact to='/willows'>Create a Listing</NavLink></button>
+            <button><NavLink className="link" exact to='/property'>Create a Listing</NavLink></button>
             <br></br>
             <br></br>
             <img className="main" src="Home.png" alt='home' />
