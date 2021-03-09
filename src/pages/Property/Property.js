@@ -1,33 +1,21 @@
 import React, { useState } from 'react'
+import PropertyPost from '../../components/PropertyPost/PropertyPost';
+import PropertyShow from '../../components/PropertyShow/PropertyShow';
 import './Property.css';
 
 function Property() {
-    const [propertyForm, setPropertyForm] = useState({
-        address: '',
-        owner: '',
-        user: '',
-        story: '',
-        amount_needed: '',
-        monthly_payment: '',
-        missed_payments: '',
-        approved: '',
-        documentation: '',
-        foreclosure_status: ''
-    })
-
-    const foreclosureStatusOptions = {
-        pre_foreclosure: 'Pre-Foreclosure',
-        phase_1: 'Payment Default',
-        phase_2: 'Notice of Default',
-        phase_3: 'Notice of Trustee\'s Sale',
-        phase_4: 'Trustee\'s Sale',
-        phase_5: 'Real Estate Owned(REO)',
-        phase_6: 'Eviction',
-    }
+    const [renderComponent, setRenderComponent] = useState(false)
 
     return (
         <div>
-            
+            <button onClick={() => setRenderComponent('Show')}>Show</button>
+            <button onClick={() => setRenderComponent('Post')}>Post</button>
+
+            { renderComponent === 'Show' ? (
+                <PropertyShow />
+            ) : (
+                <PropertyPost />
+            ) }
         </div>
     )
 }
