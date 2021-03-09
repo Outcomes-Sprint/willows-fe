@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './PropertyPost.css';
+
 
 function PropertyPost() {
-    const [propertyForm, setPropertyForm] = useState({
+	const [propertyForm, setPropertyForm] = useState({
 		address: '',
 		owner: '',
 		user: '',
@@ -24,11 +26,34 @@ function PropertyPost() {
 		phase_6: 'Eviction',
 	};
 
-    return (
-        <div>
-            PropertyPost
-        </div>
-    )
+	const handleChange = (e) => {
+		e.preventDefault();
+		setPropertyForm({
+			...propertyForm,
+			[e.target.name]: e.target.value,
+		});
+	};
+
+	return (
+		<div>
+			<h1>PropertyPost</h1>
+			<form>
+				<div>
+					<label htmlFor='monthlyPayment'>
+						What's your monthly mortgage payment?
+					</label>
+					<br />
+					<input
+						type='text'
+						name='address'
+						placeholder='Enter Address'
+						value={propertyForm.address}
+						onChange={handleChange}
+					/>
+				</div>
+			</form>
+		</div>
+	);
 }
 
-export default PropertyPost
+export default PropertyPost;
