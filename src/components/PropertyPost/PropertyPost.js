@@ -11,24 +11,18 @@ function PropertyPost({ setRenderComponent }) {
 		address: '',
 		owner: '',
 		user: '',
+        // need to pass down user pk from Login
 		story: '',
+        // need to expand box to show more characters for styling purposes
 		amount_needed: '',
 		monthly_payment: '',
 		missed_payments: '',
-		approved: '',
+		approved: 'False',
+        // will automatically be false upon submission (not sure how False looks yet in django)
 		documentation: '',
+        // need to look at how Ash did it
 		foreclosure_status: '',
 	});
-
-	const foreclosureStatusOptions = {
-		pre_foreclosure: 'Pre-Foreclosure',
-		phase_1: 'Payment Default',
-		phase_2: 'Notice of Default',
-		phase_3: "Notice of Trustee's Sale",
-		phase_4: "Trustee's Sale",
-		phase_5: 'Real Estate Owned(REO)',
-		phase_6: 'Eviction',
-	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -138,6 +132,37 @@ function PropertyPost({ setRenderComponent }) {
 								value={propertyForm.missed_payments}
 								onChange={handleChange}
 							/>
+						</div>
+						<div>
+							<label htmlFor='foreclosure_status'>
+								What stage of the foreclosure process are you in?
+							</label>
+							<br />
+							<select
+								name='foreclosure_status'
+								onChange={handleChange}>
+								<option value={propertyForm.foreclosure_status}>
+									Pre-Foreclosure
+								</option>
+								<option value={propertyForm.foreclosure_status}>
+									Payment Default
+								</option>
+								<option value={propertyForm.foreclosure_status}>
+									Notice of Default
+								</option>
+								<option value={propertyForm.foreclosure_status}>
+									Notice of Trustee's Sale
+								</option>
+								<option value={propertyForm.foreclosure_status}>
+									Trustee's Sale
+								</option>
+								<option value={propertyForm.foreclosure_status}>
+									Real Estate Owned(REO)
+								</option>
+								<option value={propertyForm.foreclosure_status}>
+									Eviction
+								</option>
+							</select>
 						</div>
 						<div>
 							<label htmlFor='story'>
