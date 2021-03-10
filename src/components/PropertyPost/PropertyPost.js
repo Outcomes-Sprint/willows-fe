@@ -50,6 +50,16 @@ function PropertyPost({ setRenderComponent, propertyData }) {
 		});
 	};
 
+	const nextSection = (e) => {
+		e.preventDefault()
+		setFormSection(formSection + 1)
+	}
+	
+	const prevSection = (e) => {
+		e.preventDefault()
+		setFormSection(formSection - 1)
+	}
+
 	return (
 		<div>
 			<h1>PropertyPost</h1>
@@ -221,7 +231,12 @@ function PropertyPost({ setRenderComponent, propertyData }) {
 								</div>
 							</>
 						) : null}
-						<button>Previous</button> <button>Next</button>
+						{formSection !== 1 ? (
+							<button onClick={prevSection}>Previous</button>
+						) : null}
+						{formSection !== 3 ? (
+							<button onClick={nextSection}>Next</button>
+						) : null}
 						<br />
 						<button>Submit</button>
 					</form>
