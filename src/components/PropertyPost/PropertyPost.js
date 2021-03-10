@@ -6,22 +6,22 @@ import ThankYou from '../../media/images/ty.png';
 
 function PropertyPost({ setRenderComponent, propertyData }) {
 	const [submitted, setSubmitted] = useState(false);
-	const [formSection, setFormSection] = useState(1)
+	const [formSection, setFormSection] = useState(1);
 
 	const [propertyForm, setPropertyForm] = useState({
 		address: '',
 		owner: '',
 		user: '',
-        // need to pass down user pk from Login
+		// need to pass down user pk from Login
 		story: '',
-        // need to expand box to show more characters for styling purposes
+		// need to expand box to show more characters for styling purposes
 		amount_needed: '',
 		monthly_payment: '',
 		missed_payments: '',
 		approved: 'False',
-        // we probably won't need to include this because the default will be false
+		// we probably won't need to include this because the default will be false
 		documentation: '',
-        // need to look at how Ash did it
+		// need to look at how Ash did it
 		foreclosure_status: '',
 	});
 
@@ -68,6 +68,7 @@ function PropertyPost({ setRenderComponent, propertyData }) {
 			) : (
 				<>
 					<div>Tell us a bit about your mortgage</div>
+					<h6>page {formSection} / 3</h6>
 					<form onSubmit={handleSubmit}>
 						{formSection === 1 ? (
 							<>
@@ -220,7 +221,8 @@ function PropertyPost({ setRenderComponent, propertyData }) {
 								</div>
 							</>
 						) : null}
-
+						<button>Previous</button> <button>Next</button>
+						<br />
 						<button>Submit</button>
 					</form>
 				</>
