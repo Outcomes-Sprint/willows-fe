@@ -4,16 +4,14 @@ import { APIURL } from '../../utils/config';
 
 function PropertyList() {
 	const [propertyData, setPropertyData] = useState([]);
+	console.log(APIURL);
 
 	useEffect(() => {
 		Axios({
 			method: 'get',
-			url: `${APIURL}/donations`,
-			headers: {
-				// Authorization: `Token ${token}`,
-			},
+			url: `${APIURL}/properties/`,
 		}).then((res) => {
-			console.log(res)
+			console.log(res);
 			setPropertyData(res.data);
 		});
 	}, []);
