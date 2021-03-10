@@ -11,6 +11,7 @@ import ProfileEdit from './components/willows/profile/ProfileEdit';
 import Property from './pages/Property/Property';
 import Login from './pages/Login/Login';
 import { UserContext } from './utils/UserContext';
+import PropertyList from './components/PropertyList/PropertyList';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(
@@ -42,6 +43,7 @@ function App() {
 					/>
 					<Route path='/signup' component={SignUp} />
 					<Route path='/map' component={Map} />
+					<Route path='/listing' component={PropertyList} />
 					<Route
 						path='/login'
 						exact
