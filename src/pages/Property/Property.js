@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import PropertyPost from '../../components/PropertyPost/PropertyPost';
 import PropertyShow from '../../components/PropertyShow/PropertyShow';
 import './Property.css';
 
 function Property() {
-    const [renderComponent, setRenderComponent] = useState('Show')
+	const [renderComponent, setRenderComponent] = useState('Show');
 
-    return (
+	return (
 		<div>
 			<button onClick={() => setRenderComponent('Show')}>Show</button>
 			<button onClick={() => setRenderComponent('Post')}>Post</button>
@@ -16,9 +16,8 @@ function Property() {
 			) : (
 				<PropertyPost setRenderComponent={setRenderComponent} />
 			)}
-
 		</div>
 	);
 }
 
-export default Property
+export default Property;

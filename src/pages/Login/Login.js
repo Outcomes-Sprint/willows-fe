@@ -5,33 +5,33 @@ import { Redirect } from 'react-router-dom';
 import { APIURL } from '../../utils/config';
 
 function Login() {
-    const { user, setUser } = useContext(UserContext);
-    const [newUser, setNewUser] = useState(false);
+	const { user, setUser } = useContext(UserContext);
+	const [newUser, setNewUser] = useState(false);
 	const [redirect, setRedirect] = useState(false);
 	const [error, setError] = useState('');
 	const [credentials, setCredentials] = useState({
 		name: '',
 		email: '',
 		password: '',
-		re_password: ''
+		re_password: '',
 	});
-    
+
 	const handleChange = (e) => {
-        e.preventDefault();
+		e.preventDefault();
 		setCredentials({
-            ...credentials,
+			...credentials,
 			[e.target.name]: e.target.value,
 		});
 	};
-    
+
 	const handleClick = () => {
-        setNewUser(!newUser);
+		setNewUser(!newUser);
 		setError('');
 	};
-    
+
 	const handleSubmit = (event) => {
-        const signUpURL = `${APIURL}/users/`;
-        const signInURL = `${APIURL}/token/login`;
+		const signUpURL = `${APIURL}/users/`;
+		const signInURL = `${APIURL}/token/login`;
 
 		if (!newUser) {
 			event.preventDefault();
@@ -97,12 +97,10 @@ function Login() {
 						<label htmlFor='password'>Password</label>
 					</div>
 					<div>
-						<button>Log In</button>
+						<button>Sign In</button>
 					</div>
 					<div>
-						<button onClick={handleClick}>
-							Need A New Profile?
-						</button>
+						<button onClick={handleClick}>Create A Listing</button>
 					</div>
 					{error}
 				</form>
@@ -146,11 +144,11 @@ function Login() {
 						<label htmlFor='retypePassword'>Retype Password</label>
 					</div>
 					<div>
-						<button>Register</button>
+						<button>Sign Up</button>
 					</div>
 					<div>
 						<button onClick={handleClick}>
-							Already Have A Profile?
+							Already Have A Listing?
 						</button>
 					</div>
 					{error}
