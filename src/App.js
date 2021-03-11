@@ -12,6 +12,7 @@ import Property from './pages/Property/Property';
 import Login from './pages/Login/Login';
 import { UserContext } from './utils/UserContext';
 import PropertyList from './components/PropertyList/PropertyList';
+import DonationConfirmation from './components/DonationConfirmation/DonationConfirmation';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(
@@ -42,6 +43,7 @@ function App() {
 						render={() => <Redirect to='/home' />}
 					/>
 					<Route path='/signup' component={SignUp} />
+					<Route path='/thank_you' component={DonationConfirmation} />
 					<Route path='/map' component={Map} />
 					<Route path='/listing' component={PropertyList} />
 					<Route
