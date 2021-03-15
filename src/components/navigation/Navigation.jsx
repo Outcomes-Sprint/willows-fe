@@ -78,7 +78,7 @@ export default function MenuAppBar({ loggedIn, handleLogout, setLoggedIn }) {
 					<div>
 						<IconButton aria-controls="menu-appbar"
 							aria-haspopup="true"
-							onClick={handleMenu} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+							onClick={handleMenu} onClose={handleClose} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
 							<MenuIcon />
 							<Menu
 								id="menu-appbar"
@@ -93,7 +93,7 @@ export default function MenuAppBar({ loggedIn, handleLogout, setLoggedIn }) {
 									horizontal: 'right',
 								}}
 								open={open}
-								onClose={handleClose}
+								onMouseLeave={handleClose}
 							>
 								<MenuItem onClick={{ handleClose }} ><Link className={classes.links} to=''>Willow</Link></MenuItem>
 								<MenuItem onClick={{ handleClose }}><Link className={classes.links} to='/profileedit'>Profile</Link></MenuItem>
